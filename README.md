@@ -3,7 +3,7 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 
 ```
 > git clone https://github.com/hungnm11/ReactJSCompareProductFromURL.git
-> cd ReduxSimpleStarter
+> cd ReactJSCompareProductFromURL
 > npm install
 > npm start
 ```

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
+import { getULR } from '../actions/index';
 
 class InputURL extends Component {
 
@@ -13,19 +16,6 @@ class InputURL extends Component {
     };
   }
 
-  // renderField(field) {
-  //   return (
-  //     <div>
-  //       {field.label}
-  //       <input
-  //         type={field.type}
-  //         placeholder={field.placeholder}
-  //         onChange={field.input.onChange}
-  //       />
-  //     </div>
-  //   );
-  // }
-
   onInputChange(event) {
     console.log(event);
 
@@ -37,7 +27,7 @@ class InputURL extends Component {
 
   render() {
     const { handleSubmit } = this.props;
-    console.log(this.props);
+    console.log('PORPS==>',this.props);
     return (
       <form onSubmit={handleSubmit(this.onFormSubmit.bind(this))}>
         <Field
@@ -64,6 +54,14 @@ class InputURL extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return state;
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ getULR }, dispatch);
+};
+
 export default reduxForm({
   form: 'inputUrlForm'
-})(InputURL);
+})(connect(null, mapDispatchToProps)(InputURL));

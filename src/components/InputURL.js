@@ -18,12 +18,17 @@ class InputURL extends Component {
 
   renderField(field) {
     return (
-      <div>
-        <input
-          type={field.type}
-          placeholder={field.placeholder}
-          onChange={field.input.onChange}
-        />
+      <div className="form-group row">
+        <label htmlFor={field.htmlFor} className="col-md-2 col-form-label">{field.label}</label>
+        <div className="col-md-10">
+          <input
+            className={field.className} 
+            type={field.type}
+            placeholder={field.placeholder}
+            onChange={field.input.onChange}
+            id={field.htmlFor}
+          />
+        </div>
         <span>{field.meta.touched ? field.meta.error : ''}</span>
       </div>
     );
@@ -49,6 +54,8 @@ class InputURL extends Component {
           name="url1"
           type="text"
           placeholder="URL 1"
+          className="form-control"
+          htmlFor="url1"
           component={this.renderField}
           onChange={this.onInputChange}
         />
@@ -58,6 +65,8 @@ class InputURL extends Component {
           name="url2"
           type="text"
           placeholder="URL 2"
+          className="form-control"
+          htmlFor="url2"
           component={this.renderField}
           onChange={this.onInputChange}
         />

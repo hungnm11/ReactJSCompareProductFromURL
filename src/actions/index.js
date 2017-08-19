@@ -15,17 +15,20 @@ export const getData = () => {
   };
 };
 
-export const getDataSuccess = (data) => {
+export const getDataSuccess = (data1, data2) => {
   return {
     type: FETCH_DATA_SUCCESS,
-    payload: data
+    payload: {
+      page1: data1,
+      page2: data2
+    }
   }
 };
 
 export const getDataFailure = (error) => {
   return {
     type: FETCH_DATA_FAILURE,
-    payload, error
+    payload: error
   }
 };
 
@@ -45,7 +48,15 @@ export const getULR = (urls) => {
     dispatch(getData())
     Promise.all([requestURL1, requestURL2])
       .then(data => {
-         dispatch(getDataSuccess(data))
+        const page1 = data[0].data;
+        const page2 = data[1].data;
+        const div = document.createElement('div');
+        div.innerHTML = page1;
+        const elements = div.childNodes;
+        const notes = div.getElementsByClassName('prod_header_title')[0].innerHTML;
+        console.log('nodeArray', notes)
+        console.log('ARRAY', elements)
+        dispatch(getDataSuccess(page1, page2))
       })
       .catch(err => {
         console.log('ERROR', err);

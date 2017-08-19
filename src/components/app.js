@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import InputURL from './InputURL';
 
 export default class App extends Component {
   render() {
     return (
-      <div>React simple starter</div>
+      <div>
+        <InputURL />
+      </div>
     );
   }
 }

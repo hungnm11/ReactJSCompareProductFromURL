@@ -48,14 +48,14 @@ export const getULR = (urls) => {
     dispatch(getData())
     Promise.all([requestURL1, requestURL2])
       .then(data => {
-        const page1 = data[0].data;
-        const page2 = data[1].data;
-        const div = document.createElement('div');
-        div.innerHTML = page1;
-        const elements = div.childNodes;
-        const notes = div.getElementsByClassName('prod_header_title')[0].innerHTML;
-        console.log('nodeArray', notes)
-        console.log('ARRAY', elements)
+        const page1 = parseContent(data[0].data);
+        const page2 = parseContent(data[1].data);
+        // const div = document.createElement('div');
+        // div.innerHTML = page1;
+        // const elements = div.childNodes;
+        // const notes = div.getElementsByClassName('prod_header_title')[0].innerHTML;
+        // console.log('nodeArray', notes)
+        // console.log('ARRAY', elements)
         dispatch(getDataSuccess(page1, page2))
       })
       .catch(err => {
@@ -63,4 +63,15 @@ export const getULR = (urls) => {
         dispatch(getDataFailure(err))
       })
   }
+};
+
+
+export const parseContent = (page) => {
+  const div = document.createElement('div');
+  div.innerHTML = page;
+  const elements = div.childNodes;
+  const notes = div.getElementsByClassName('prd-detail-wrapper')[0].innerHTML;
+  // console.log('nodeArray', notes)
+  return notes;
+  
 };

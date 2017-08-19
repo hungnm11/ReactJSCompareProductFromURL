@@ -15,7 +15,10 @@ class PageContent extends Component {
       return <div>Loading...</div>;
     }
     return (
-      <div dangerouslySetInnerHTML={{__html: this.props.content.data.page1}} />
+      <div className="row">
+        <div className="col-md-6" dangerouslySetInnerHTML={{__html: this.props.content.data.page1}} />
+        <div className="col-md-6" dangerouslySetInnerHTML={{__html: this.props.content.data.page2}} />
+      </div>
     );
   }
 }

@@ -45,7 +45,7 @@ export const getULR = (urls) => {
     dispatch(getData())
     Promise.all([requestURL1, requestURL2])
       .then(data => {
-        dispatch(getDataSuccess(data))
+         dispatch(getDataSuccess(data))
       })
       .catch(err => {
         console.log('ERROR', err);

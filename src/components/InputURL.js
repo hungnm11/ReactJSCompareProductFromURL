@@ -16,6 +16,19 @@ class InputURL extends Component {
     };
   }
 
+  renderField(field) {
+    return (
+      <div>
+        <input
+          type={field.type}
+          placeholder={field.placeholder}
+          onChange={field.input.onChange}
+        />
+        <span>{field.meta.touched ? field.meta.error : ''}</span>
+      </div>
+    );
+  }
+
   onInputChange(event) {
     console.log(event);
 
@@ -23,6 +36,7 @@ class InputURL extends Component {
 
   onFormSubmit(event) {
     console.log('Event', event);
+    this.props.getULR(event);
   }
 
   render() {
@@ -35,7 +49,7 @@ class InputURL extends Component {
           name="url1"
           type="text"
           placeholder="URL 1"
-          component="input"
+          component={this.renderField}
           onChange={this.onInputChange}
         />
 
@@ -44,7 +58,7 @@ class InputURL extends Component {
           name="url2"
           type="text"
           placeholder="URL 2"
-          component="input"
+          component={this.renderField}
           onChange={this.onInputChange}
         />
 
@@ -54,8 +68,19 @@ class InputURL extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return state;
+const validate = (values) => {
+  console.log('values==>', values);
+  const errors = {};
+
+  if (!values.url1) {
+    errors.url1 = 'Please enter url.'
+  }
+
+  if (!values.url2) {
+    errors.url2 = 'Please enter url.'
+  }
+
+  return errors;
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -63,5 +88,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default reduxForm({
+  validate,
   form: 'inputUrlForm'
 })(connect(null, mapDispatchToProps)(InputURL));

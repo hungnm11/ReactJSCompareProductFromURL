@@ -1,5 +1,9 @@
 export const GET_URLS = 'get_urls';
 
 export const getULR = (urls) => {
-  return console.log(urls);
+  console.log('ihfiehwoiefo===>', urls);
+  return {
+    type: GET_URLS,
+    payload: urls
+  }
 };

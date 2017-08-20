@@ -70,8 +70,8 @@ class InputURL extends Component {
           component={this.renderField}
           onChange={this.onInputChange}
         />
-
-        <button type="submit">Submit</button>
+      
+        <button className="btn btn-primary" type="submit">Submit</button>
       </form>
     );
   }

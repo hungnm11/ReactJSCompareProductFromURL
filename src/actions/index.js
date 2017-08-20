@@ -70,8 +70,17 @@ export const parseContent = (page) => {
   const div = document.createElement('div');
   div.innerHTML = page;
   const elements = div.childNodes;
-  const notes = div.getElementsByClassName('prd-detail-wrapper')[0].innerHTML;
-  // console.log('nodeArray', notes)
+  const titleProduct = div.querySelector('h1#prod_title').textContent;
+  const imageProduct = div.querySelector('div.productImage').dataset.big;
+  const price = div.getElementsByClassName('prod_pricebox')[0].innerHTML;
+  const specifications = div.getElementsByClassName('product-description__block')[0].innerHTML;
+  const notes = div.getElementsByClassName('l-pageWrapper')[0].innerHTML;
+  console.log('nodeArray', {
+    titleProduct,
+    imageProduct,
+    price,
+    specifications
+  })
   return notes;
   
 };

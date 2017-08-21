@@ -29,7 +29,7 @@ class InputURL extends Component {
             id={field.htmlFor}
           />
         </div>
-        <span>{field.meta.touched ? field.meta.error : ''}</span>
+        <span className="text-danger">{field.meta.touched ? field.meta.error : ''}</span>
       </div>
     );
   }
@@ -47,13 +47,14 @@ class InputURL extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
+      <div className="row">
       <form onSubmit={handleSubmit(this.onFormSubmit.bind(this))} >
         <div className="form-row">
           <Field
             label="URL 1"
             name="url1"
             type="text"
-            placeholder="URL 1"
+            placeholder="https://lazada.com/your_product"
             className="form-control"
             htmlFor="url1"
             component={this.renderField}
@@ -64,7 +65,7 @@ class InputURL extends Component {
             label="URL 2"
             name="url2"
             type="text"
-            placeholder="URL 2"
+            placeholder="https://lazada.com/your_product"
             className="form-control"
             htmlFor="url2"
             component={this.renderField}
@@ -75,6 +76,7 @@ class InputURL extends Component {
           </div>
         </div>
       </form>
+      </div>
     );
   }
 }
@@ -83,11 +85,11 @@ const validate = (values) => {
   const errors = {};
 
   if (!values.url1) {
-    errors.url1 = 'Please enter url.'
+    errors.url1 = 'Please enter your URL.'
   }
 
   if (!values.url2) {
-    errors.url2 = 'Please enter url.'
+    errors.url2 = 'Please enter your URL.'
   }
 
   return errors;

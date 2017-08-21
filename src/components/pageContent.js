@@ -60,9 +60,14 @@ class PageContent extends Component {
   }
 
   render() {
+    const progress = (
+      <div className="row">
+        <div className="loader"></div>
+      </div>
+    );
     return (
       <div className="row">
-        { this.props.content.isFetching && <div>Loading...</div> }
+        { this.props.content.isFetching && progress }
         { Object.keys(this.props.content.data).length ? this.renderCompareProduct() : null }
       </div>
     );

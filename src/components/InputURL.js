@@ -84,17 +84,15 @@ class InputURL extends Component {
 const validate = (values) => {
   const errors = {};
 
-  // const regex = /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i;
-
   const checkUrlLazada = /(?:https?:\/\/)?(?:www\.)?(mbasic.lazada|m\.lazada|lazada)\.(com|sg|vn|com.my|co.id|com.ph|co.th)\/(?:(?:\w\.)*#!\/)?(?:pages\/)?(?:[\w\-.]*\/)*([\w\-.]*)/ig;
 
   if (values.url1) {
-    !checkUrlLazada.test(values.url1) && (errors.url1 = 'URL is not invalid, please enter url from Lazada.');
-  } 
+    !values.url1.match(checkUrlLazada) && (errors.url1 = 'URL is not invalid, please enter url from Lazada.');
+  }
 
   if (values.url2) {
-    !checkUrlLazada.test(values.url2) && (errors.url1 = 'URL is not invalid, please enter url from Lazada.');
-  } 
+    !values.url2.match(checkUrlLazada) && (errors.url2 = 'URL is not invalid, please enter url from Lazada.');
+  }
 
   if (!values.url1) {
     errors.url1 = 'Please enter your URL.'

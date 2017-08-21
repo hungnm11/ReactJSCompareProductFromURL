@@ -34,8 +34,8 @@ export const getDataFailure = (error) => {
 
 export const getULR = (urls) => {
   console.log('*******', urls)
-  const url1 = `${PROXY_URL + ROOT_URL1}`
-  const url2 = `${PROXY_URL + ROOT_URL2}`
+  const url1 = `${PROXY_URL + urls.url1}`;
+  const url2 = `${PROXY_URL + urls.url2}`;
   const requestURL1  = axios.get(url1).then((response) => {
     return response;
   });

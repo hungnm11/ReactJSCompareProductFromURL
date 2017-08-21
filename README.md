@@ -1,4 +1,4 @@
-#RealBoost Portal
+#ReactJSCompareProductFromURL
 
 - Clone this repo
 - Run npm install to install all the dependencies.

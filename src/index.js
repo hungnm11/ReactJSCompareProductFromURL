@@ -6,7 +6,8 @@ import ReduxThunk from 'redux-thunk';
 import logger from 'redux-logger';
 import App from './components/app';
 import reducers from './reducers';
-import '../style/style.scss';
+// import 'bootstrap/dist/css/bootstrap.css';
+import './assets/scss/main.scss';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxThunk, logger)(createStore);
 
@@ -15,3 +16,4 @@ ReactDOM.render(
     <App />
   </Provider>
   , document.querySelector('.container'));
+

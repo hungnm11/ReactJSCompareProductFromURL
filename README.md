@@ -1,9 +1,7 @@
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
+#RealBoost Portal
 
-```
-> git clone https://github.com/hungnm11/ReactJSCompareProductFromURL.git
-> cd ReactJSCompareProductFromURL
-> npm install
-> npm start
-```
+- Clone this repo
+- Run npm install to install all the dependencies.
+- Run npm run start for development mode.
+- Run npm run prod for production mode.
+- New browser window should open automatically.

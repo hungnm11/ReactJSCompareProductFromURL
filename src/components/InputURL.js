@@ -18,11 +18,11 @@ class InputURL extends Component {
 
   renderField(field) {
     return (
-      <div className="form-group row">
-        <label htmlFor={field.htmlFor} className="col-md-2 col-form-label">{field.label}</label>
-        <div className="col-md-10">
+      <div className="col-md-5">
+        <label htmlFor={field.htmlFor} className="sr-only">{field.label}</label>
+        <div className="">
           <input
-            className={field.className} 
+            className={field.className}
             type={field.type}
             placeholder={field.placeholder}
             onChange={field.input.onChange}
@@ -47,30 +47,33 @@ class InputURL extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.onFormSubmit.bind(this))}>
-        <Field
-          label="URL 1"
-          name="url1"
-          type="text"
-          placeholder="URL 1"
-          className="form-control"
-          htmlFor="url1"
-          component={this.renderField}
-          onChange={this.onInputChange}
-        />
+      <form onSubmit={handleSubmit(this.onFormSubmit.bind(this))} >
+        <div className="form-row">
+          <Field
+            label="URL 1"
+            name="url1"
+            type="text"
+            placeholder="URL 1"
+            className="form-control"
+            htmlFor="url1"
+            component={this.renderField}
+            onChange={this.onInputChange}
+          />
 
-        <Field
-          label="URL 2"
-          name="url2"
-          type="text"
-          placeholder="URL 2"
-          className="form-control"
-          htmlFor="url2"
-          component={this.renderField}
-          onChange={this.onInputChange}
-        />
-      
-        <button className="btn btn-primary" type="submit">Submit</button>
+          <Field
+            label="URL 2"
+            name="url2"
+            type="text"
+            placeholder="URL 2"
+            className="form-control"
+            htmlFor="url2"
+            component={this.renderField}
+            onChange={this.onInputChange}
+          />
+          <div className="col-md-2">
+            <button className="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </div>
       </form>
     );
   }

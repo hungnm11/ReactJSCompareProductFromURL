@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
-const ROOT_URL2 = `http://www.lazada.vn/huawei-y6-scale-8gb-trang-hang-phan-phoi-chinh-thuc-3987650.html`;
-const ROOT_URL1 = `http://www.lazada.sg/samsung-galaxy-s8-64gb-midnight-black-18155589.html`;
 
 export const GET_URLS = 'get_urls';
 export const FETCHING_DATA = 'fetching_data';
@@ -33,7 +31,6 @@ export const getDataFailure = (error) => {
 };
 
 export const getULR = (urls) => {
-  console.log('*******', urls)
   const url1 = `${PROXY_URL + urls.url1}`;
   const url2 = `${PROXY_URL + urls.url2}`;
   const requestURL1  = axios.get(url1).then((response) => {

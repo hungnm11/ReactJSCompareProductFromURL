@@ -39,16 +39,25 @@ class PageContent extends Component {
               <td>
                 <div className="product-specifications">
                   <div dangerouslySetInnerHTML={{ __html: page1.specifications.desc }} />
-                  General Features:
-            <table dangerouslySetInnerHTML={{ __html: page1.specifications.descTbl }} />
+
                 </div>
               </td>
               <td>
                 <div className="product-specifications">
                   <div dangerouslySetInnerHTML={{ __html: page2.specifications.desc }} />
-                  General Features:
-            <table dangerouslySetInnerHTML={{ __html: page2.specifications.descTbl }} />
+
                 </div>
+              </td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+                <strong>General Features:</strong>
+                <table dangerouslySetInnerHTML={{ __html: page1.specifications.descTbl }} />
+              </td>
+              <td>
+              <strong>General Features:</strong>
+              <table dangerouslySetInnerHTML={{ __html: page2.specifications.descTbl }} />
               </td>
             </tr>
           </tbody>
@@ -60,7 +69,7 @@ class PageContent extends Component {
   render() {
     const progress = (
       <div className="row">
-        <div className="loader"></div>
+        <div className="loader center-block"></div>
       </div>
     );
     return (

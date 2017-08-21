@@ -48,7 +48,7 @@ class InputURL extends Component {
     const { handleSubmit } = this.props;
     return (
       <div className="row">
-      <form onSubmit={handleSubmit(this.onFormSubmit.bind(this))} >
+      <form onSubmit={handleSubmit(this.onFormSubmit.bind(this))} className="inputForm">
         <div className="form-row">
           <Field
             label="URL 1"

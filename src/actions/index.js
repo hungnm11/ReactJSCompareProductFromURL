@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 const ROOT_URL2 = `http://www.lazada.sg/apple-iphone-7-plus-128gb-jet-black-8629928.html `;
-const ROOT_URL1 = `http://www.lazada.sg/telco-apple-iphone-7-plus-128gb-product-red-16801971.html`;
+const ROOT_URL1 = `http://www.lazada.sg/samsung-galaxy-s8-64gb-midnight-black-18155589.html`;
 
 export const GET_URLS = 'get_urls';
 export const FETCHING_DATA = 'fetching_data';
@@ -50,16 +50,9 @@ export const getULR = (urls) => {
       .then(data => {
         const page1 = parseContent(data[0].data);
         const page2 = parseContent(data[1].data);
-        // const div = document.createElement('div');
-        // div.innerHTML = page1;
-        // const elements = div.childNodes;
-        // const notes = div.getElementsByClassName('prod_header_title')[0].innerHTML;
-        // console.log('nodeArray', notes)
-        // console.log('ARRAY', elements)
         dispatch(getDataSuccess(page1, page2))
       })
       .catch(err => {
-        console.log('ERROR', err);
         dispatch(getDataFailure(err))
       })
   }
@@ -73,14 +66,24 @@ export const parseContent = (page) => {
   const titleProduct = div.querySelector('h1#prod_title').textContent;
   const imageProduct = div.querySelector('div.productImage').dataset.big;
   const price = div.getElementsByClassName('prod_pricebox')[0].innerHTML;
-  const specifications = div.getElementsByClassName('product-description__block')[0].innerHTML;
-  const notes = div.getElementsByClassName('l-pageWrapper')[0].innerHTML;
+  const descProduct = div.getElementsByClassName('product-description__inbox')[0].innerHTML;
+  const descTblProduct = div.getElementsByClassName('specification-table')[0].innerHTML;
   console.log('nodeArray', {
     titleProduct,
     imageProduct,
     price,
-    specifications
+    specifications: {
+      desc: descProduct,
+      descTbl: descTblProduct
+    }
   })
-  return notes;
-  
+  return {
+    titleProduct,
+    imageProduct,
+    price,
+    specifications: {
+      desc: descProduct,
+      descTbl: descTblProduct
+    }
+  };
 };

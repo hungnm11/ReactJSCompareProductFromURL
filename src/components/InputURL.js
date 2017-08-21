@@ -46,7 +46,6 @@ class InputURL extends Component {
 
   render() {
     const { handleSubmit } = this.props;
-    console.log('PORPS==>',this.props);
     return (
       <form onSubmit={handleSubmit(this.onFormSubmit.bind(this))}>
         <Field
@@ -78,7 +77,6 @@ class InputURL extends Component {
 }
 
 const validate = (values) => {
-  console.log('values==>', values);
   const errors = {};
 
   if (!values.url1) {

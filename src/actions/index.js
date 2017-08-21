@@ -68,15 +68,6 @@ export const parseContent = (page) => {
   const price = div.getElementsByClassName('prod_pricebox')[0].innerHTML;
   const descProduct = div.getElementsByClassName('product-description__inbox')[0].innerHTML;
   const descTblProduct = div.getElementsByClassName('specification-table')[0].innerHTML;
-  console.log('nodeArray', {
-    titleProduct,
-    imageProduct,
-    price,
-    specifications: {
-      desc: descProduct,
-      descTbl: descTblProduct
-    }
-  })
   return {
     titleProduct,
     imageProduct,

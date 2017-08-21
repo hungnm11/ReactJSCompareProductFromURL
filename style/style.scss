@@ -1,17 +1,50 @@
 .container {
-  
-}
+  .table {
+    font-size: 12px;
+    .product {
+      .img-thumbnail {
+        max-width: 200px;
+        border: none;
+      }
+      .product-name {
+        font-size: 13px;
+        font-weight: 700;
+        margin-top: 15px;
+      }
+    }
+    .prod_pricebox_price_final {
+      font-size: 24px;
+      #product_price {
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+    #price_box {
+      text-decoration-line: line-through;
+    }
+    .prod_saving {
+      .price_highlight {
+        color: red;
+      }
+    }
+    .product-price-info {
 
+    }
+    .product-specifications {
 
-.loader {
-  border: 3px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 10px solid #3498db;
-  border-bottom: 10px solid #3498db;
-  width: 50px;
-  height: 50px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+    }
+  }
+  .loader {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #3498db;
+    border-bottom: 10px solid #3498db;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
 }
 
 @-webkit-keyframes spin {

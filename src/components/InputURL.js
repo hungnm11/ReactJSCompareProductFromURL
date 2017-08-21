@@ -18,7 +18,7 @@ class InputURL extends Component {
 
   renderField(field) {
     return (
-      <div className="col-md-5">
+      <div className="col-md-5 col-sm-5 col-xs-12">
         <label htmlFor={field.htmlFor} className="sr-only">{field.label}</label>
         <div className="">
           <input
@@ -54,7 +54,7 @@ class InputURL extends Component {
             label="URL 1"
             name="url1"
             type="text"
-            placeholder="https://lazada.com/your_product"
+            placeholder="URL: https://lazada.com/your_product"
             className="form-control"
             htmlFor="url1"
             component={this.renderField}
@@ -65,13 +65,13 @@ class InputURL extends Component {
             label="URL 2"
             name="url2"
             type="text"
-            placeholder="https://lazada.com/your_product"
+            placeholder="URL: https://lazada.com/your_product"
             className="form-control"
             htmlFor="url2"
             component={this.renderField}
             onChange={this.onInputChange}
           />
-          <div className="col-md-2">
+          <div className="col-md-2 col-sm-2 col-xs-12">
             <button className="btn btn-primary" type="submit">Submit</button>
           </div>
         </div>

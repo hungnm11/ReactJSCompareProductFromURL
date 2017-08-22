@@ -35,6 +35,15 @@ class PageContent extends Component {
               </td>
             </tr>
             <tr>
+              <th scope="row">Average Product Rating</th>
+              <td>
+                <div dangerouslySetInnerHTML={{__html: page1.rating}} />
+              </td>
+              <td>
+              <div dangerouslySetInnerHTML={{__html: page2.rating}} />
+              </td>
+            </tr>
+            <tr>
               <th scope="row">Specifications</th>
               <td>
                 <div className="product-specifications">

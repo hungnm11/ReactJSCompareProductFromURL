@@ -65,6 +65,7 @@ export const parseContent = (page) => {
   const price = div.getElementsByClassName('prod_pricebox')[0].innerHTML;
   const descProduct = div.getElementsByClassName('product-description__inbox')[0].innerHTML;
   const descTblProduct = div.getElementsByClassName('specification-table')[0].innerHTML;
+  const totalRating = div.getElementsByClassName('c-rating-total ')[0].innerHTML
   return {
     titleProduct,
     imageProduct,
@@ -72,6 +73,7 @@ export const parseContent = (page) => {
     specifications: {
       desc: descProduct,
       descTbl: descTblProduct
-    }
+    },
+    rating: totalRating
   };
 };

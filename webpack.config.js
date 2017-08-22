@@ -92,14 +92,18 @@ module.exports = {
         test: /\.(sass|scss)$/,
         use: cssConfig
       },
-       {
+      //  {
+      //   test: /\.css$/,
+      //   use: extractCSS.extract({
+      //     use: [{
+      //       loader: 'css-loader',
+      //     }],
+      //     fallback: 'style-loader'
+      //   })
+      // },
+      {
         test: /\.css$/,
-        use: extractCSS.extract({
-          use: [{
-            loader: 'css-loader',
-          }],
-          fallback: 'style-loader'
-        })
+        use: [ 'style-loader', 'postcss-loader' ]
       },
     ]
   },

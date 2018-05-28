@@ -66,7 +66,7 @@ export const parseContent = (page) => {
   const titleProduct = div.querySelector('h1.pdp-product-title').textContent;
   const imageProduct = div.querySelector('img.pdp-mod-common-image').getAttribute('src');
   const price = div.getElementsByClassName('pdp-price')[0].innerHTML;
-  const descProduct = div.querySelector('#module_product_detail');
+  const descProduct = div.querySelector('#module_product_detail').innerHTML;
 
   // const descTblProduct = div.getElementsByClassName('specification-table')[0].innerHTML;
   // const totalRating = div.getElementsByClassName('.pdp-block__rating-questions')

@@ -14,6 +14,7 @@ export const getData = () => {
 };
 
 export const getDataSuccess = (data1, data2) => {
+  console.log('DATA1 ', data1)
   return {
     type: FETCH_DATA_SUCCESS,
     payload: {
@@ -59,21 +60,25 @@ export const getULR = (urls) => {
 export const parseContent = (page) => {
   const div = document.createElement('div');
   div.innerHTML = page;
+  // const rootEl = div.querySelector('#root');
   const elements = div.childNodes;
-  const titleProduct = div.querySelector('h1#prod_title').textContent;
-  const imageProduct = div.querySelector('div.productImage').dataset.big;
-  const price = div.getElementsByClassName('prod_pricebox')[0].innerHTML;
-  const descProduct = div.getElementsByClassName('product-description__inbox')[0].innerHTML;
-  const descTblProduct = div.getElementsByClassName('specification-table')[0].innerHTML;
-  const totalRating = div.getElementsByClassName('c-rating-total ')[0].innerHTML
+  
+  const titleProduct = div.querySelector('h1.pdp-product-title').textContent;
+  const imageProduct = div.querySelector('img.pdp-mod-common-image').getAttribute('src');
+  const price = div.getElementsByClassName('pdp-price')[0].innerHTML;
+  const descProduct = div.querySelector('#module_product_detail');
+
+  // const descTblProduct = div.getElementsByClassName('specification-table')[0].innerHTML;
+  // const totalRating = div.getElementsByClassName('.pdp-block__rating-questions')
+  // console.log('Rating ==>', totalRating)
   return {
     titleProduct,
     imageProduct,
     price,
     specifications: {
       desc: descProduct,
-      descTbl: descTblProduct
+      // descTbl: descTblProduct
     },
-    rating: totalRating
+    // rating: totalRating
   };
 };

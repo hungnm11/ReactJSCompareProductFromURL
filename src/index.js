@@ -8,6 +8,7 @@ import App from './components/app';
 import reducers from './reducers';
 // import 'bootstrap/dist/css/bootstrap.css';
 import './assets/scss/main.scss';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxThunk, logger)(createStore);
 

@@ -13,21 +13,30 @@
           font-weight: normal;
           text-transform: uppercase;
         }
+        .product {
+          .img-thumbnail {
+            width: 350px;
+          }
+        }
       }
     }
-    .product {
-      .img-thumbnail {
-        max-width: 200px;
-        border: none;
+    
+    .product-specifications {
+      .pdp-product-desc  {
+        img {
+          max-width: 350px !important;
+          border: none;
+        }
+        .product-name {
+          font-size: 13px;
+          font-weight: 700;
+          margin-top: 15px;
+        }
       }
-      .product-name {
-        font-size: 13px;
-        font-weight: 700;
-        margin-top: 15px;
-      }
+      
     }
-    .prod_pricebox_price_final {
-      font-size: 24px;
+    .product-price-info {
+      font-size: 30px;
       #product_price {
         &.hidden {
           display: none;

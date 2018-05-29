@@ -15,13 +15,13 @@ class PageContent extends Component {
               <td>
                 <div className="product">
                   <img src={page1.imageProduct} className="img-thumbnail center-block" />
-                  <p className="product-name">{page1.titleProduct}</p>
+                  <h2 className="product-name">{page1.titleProduct}</h2>
                 </div>
               </td>
               <td>
                 <div className="product">
                   <img src={page2.imageProduct} className="img-thumbnail center-block" />
-                  <p className="product-name">{page2.titleProduct}</p>
+                  <h2 className="product-name">{page2.titleProduct}</h2>
                 </div>
               </td>
             </tr>

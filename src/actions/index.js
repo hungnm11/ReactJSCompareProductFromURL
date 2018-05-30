@@ -61,7 +61,7 @@ export const parseContent = (page) => {
   const div = document.createElement('div');
   div.innerHTML = page;
   // const rootEl = div.querySelector('#root');
-  const elements = div.childNodes;
+  // const elements = div.childNodes;
   
   const titleProduct = div.querySelector('h1.pdp-product-title').textContent;
   const imageProduct = div.querySelector('img.pdp-mod-common-image').getAttribute('src');

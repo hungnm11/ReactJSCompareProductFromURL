@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar src/assets/scss/ -o src/assets/css/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/assets/scss/ -o src/assets/css/ --watch --recursive --usePolling",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
